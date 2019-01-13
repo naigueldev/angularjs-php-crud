@@ -1,0 +1,39 @@
+<div class="row mt-4">
+  <div class="col-md-2">
+    <ul class="nav nav-pills flex-column nav-stacked">
+      <li class="nav-item">
+        <a class="nav-link active" href="#!/">Home</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#!/createPost">Add Post</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-10">
+    <h4>ALL POSTS</h4>
+    <div ng-controller="postsCtrl">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Created</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-light" ng-repeat="post in posts.info">
+            <td>{{post.title}}</td>
+            <td>{{post.description}}</td>
+            <td>{{post.published_on}}</td>
+            <td>
+              <a ng-href="#/" class="btn btn-primary btn-sm m-1">VIEW</a>
+              <a ng-href="#/" class="btn btn-danger btn-sm m-1">DELETE</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
