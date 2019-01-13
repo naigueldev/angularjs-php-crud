@@ -20,20 +20,32 @@ myApp.controller("postsCtrl", function($scope, $http){
 });
 myApp.controller("createCtrl", function($scope){
     $("#submit").click(function(){
+      var success_div = $("#alert_success");
+      var danger_div = $("#alert_danger");
       var title = $("#title").val();
       var description = $("#description").val();
-      var data_string = $("#myform").serialize();
+      var data_string = $("#create_post").serialize();
+      var toastr_action = "";
+      var toastr_msg = "";
 
       if(title == "" || description == ""){
-        $("#msg").html("Please fill all details");
+        // danger_div.find("#msg").html("Please fill all details");
+        // danger_div.show();
+        toastr_action =  'error';
+        toastr_msg = "Please fill all details";
+        show_toastr(toastr_action,toastr_msg);
       }else{
         $.ajax({
           type: "POST",
-          url: "http://localhost/angularjs-php-crud/webservices/addPosts.php",
+          url: "http://localhost/angularjs-php-crud/webservices/addPost.php",
           data: data_string,
           cache: false,
           success: function(result){
-            $("#msg").html(result);
+            // success_div.show();
+            // success_div.find("#msg").html(result);
+            toastr_action =  'success';
+            toastr_msg = result;
+            show_toastr(toastr_action,toastr_msg);
             var title = $("#title").val("");
             var description = $("#description").val("");
           }
