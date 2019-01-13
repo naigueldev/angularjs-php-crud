@@ -28,8 +28,8 @@
             <td>{{post.description}}</td>
             <td>{{post.published_on}}</td>
             <td>
-              <a ng-href="#/" class="btn btn-primary btn-sm m-1">VIEW</a>
-              <a ng-href="#/" class="btn btn-danger btn-sm m-1">DELETE</a>
+              <a ng-href="#!/post/{{post.id}}" class="btn btn-primary btn-sm m-1">VIEW</a>
+              <a ng-href="#!/delete/{{post.id}}" class="btn btn-danger btn-sm m-1">DELETE</a>
             </td>
           </tr>
         </tbody>

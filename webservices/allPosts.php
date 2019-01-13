@@ -10,7 +10,7 @@ if ($query->num_rows > 0) {
     $description = $row['description'];
     $published_on = $row['published_on'];
     $result[] = array(
-      '' => $id ,
+      'id' => $id ,
       'title' => $title,
       'description' => $description,
       'published_on' => $published_on
