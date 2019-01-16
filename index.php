@@ -48,7 +48,9 @@
   <script type="text/javascript" src="assets/js/bootstrap/bootstrap.min.js"></script>
   <script type="text/javascript" src="assets/js/angular-js/angular.min.js"></script>
   <script type="text/javascript" src="assets/js/angular-js/angular-route.min.js"></script>
-  <script type="text/javascript" src="assets/js/angular-js/app.js"></script>
+
+  <?include("assets/js/angular-js/app-js.php");?>
+  
   <script type="text/javascript" src="assets/js/toastr/toastr.min.js"></script>
   <script type="text/javascript" src="assets/js/toastr/toastr-init.js"></script>
 

@@ -21,7 +21,7 @@ myApp.config(function($routeProvider){
 });
 
 myApp.controller("postsCtrl", function($scope, $http){
-  $http.get("http://localhost/angularjs-php-crud/webservices/allPosts.php")
+  $http.get("http://192.168.0.103:8080/angularjs-php-crud/webservices/allPosts.php")
   .then(function(response){
     $scope.posts = response.data;
     console.log($scope.posts);
@@ -29,7 +29,7 @@ myApp.controller("postsCtrl", function($scope, $http){
 });
 myApp.controller("viewCtrl", function($scope, $http, $routeParams){
   $http({
-    url: "http://localhost/angularjs-php-crud/webservices/getPost.php",
+    url: "http://192.168.0.103:8080/angularjs-php-crud/webservices/getPost.php",
     params: {id: $routeParams.id},
     method: "get"
   })
@@ -39,7 +39,7 @@ myApp.controller("viewCtrl", function($scope, $http, $routeParams){
 });
 myApp.controller("deleteCtrl", function($scope, $http, $routeParams){
   $http({
-    url: "http://localhost/angularjs-php-crud/webservices/deletePost.php",
+    url: "http://192.168.0.103:8080/angularjs-php-crud/webservices/deletePost.php",
     params: {id: $routeParams.id},
     method: "get"
   })
@@ -67,7 +67,7 @@ myApp.controller("createCtrl", function($scope){
       }else{
         $.ajax({
           type: "POST",
-          url: "http://localhost/angularjs-php-crud/webservices/addPost.php",
+          url: "http://192.168.0.103:8080/angularjs-php-crud/webservices/addPost.php",
           data: data_string,
           cache: false,
           success: function(result){
